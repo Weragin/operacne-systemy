@@ -9,6 +9,8 @@ STAT_TYPE_FILE = 0
 STAT_TYPE_DIR = 1
 STAT_TYPE_SYMLINK = 2
 
+STAT_TYPE_DIRECTORY = STAT_TYPE_DIR
+
 # Utility functions
 def if_raise(cond, s):
 	if cond:
@@ -530,7 +532,7 @@ def test_02_hello_world_stat(s, dsize):
 	return t.ops()
 
 def test_02_stress_creat(s, dsize):
-	''' Create empty files using ratio 1 file er 4 sectors of disk size '''
+	''' Create empty files using ratio 1 file per 4 sectors of disk size '''
 	t = FilesystemTester(s, dsize)
 
 	# Four sectors for file without any content
